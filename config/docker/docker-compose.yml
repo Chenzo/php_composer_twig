@@ -9,8 +9,6 @@ services:
         volumes:
             - ../../php:/var/www/html
             - ../php/php.ini:/usr/local/etc/php/php.ini
-        links:
-            - 'database'
         environment:
             SITE_URL: http://localhost
             TZ: America/New_York
