@@ -1,0 +1,16 @@
+version: '3'
+services:
+    php-apache:
+        build:
+            context: ../../
+            dockerfile: config/docker/Dockerfile
+        ports:
+            - 80:80
+        volumes:
+            - ../../php:/var/www/html
+            - ../php/php.ini:/usr/local/etc/php/php.ini
+        links:
+            - 'database'
+        environment:
+            SITE_URL: http://localhost
+            TZ: America/New_York
